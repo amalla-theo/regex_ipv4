@@ -11,11 +11,36 @@ public class Main {
         System.out.println("Veuillez entrer une adresse IPv4");
         classeIpV4 = In.readString();
 
-
+        // Classe A
         if (saisie.classeA(classeIpV4) == true) {
             System.out.println("Cette adresse est de classe A");
-        }else {
-            System.out.println("Erreur");
+            if (saisie.classeAPrivee(classeIpV4) == true) {
+                System.out.println("Cette adresse est privée");
+            } else if (saisie.routeParDefaut(classeIpV4) == true) {
+                System.out.println("Cette adresse est une route par defaut");
+            } else {
+                System.out.println("Cette adresse est publique");
+            }
+        }
+        if (saisie.loopback(classeIpV4) == true) {
+            System.out.println("Cette adresse est un loopback");
+        }
+
+        if (saisie.classeB(classeIpV4) == true) {
+            System.out.println("Cette adresse est de classe B");
+            if (saisie.classeBPrivee(classeIpV4) == true) {
+                System.out.println("Cette adresse est privée");
+            } else {
+                System.out.println("Cette adresse est publique");
+            }
+        }
+        if (saisie.classeC(classeIpV4) == true) {
+            System.out.println("Cette adresse est de classe C");
+            if (saisie.classeCPrivee(classeIpV4) == true) {
+                System.out.println("Cette adresse est privée");
+            } else {
+                System.out.println("Cette adresse est publique");
+            }
         }
 
     }
