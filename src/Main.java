@@ -6,6 +6,7 @@ public class Main {
 
         Ipv4 saisie = new Ipv4();
 
+        // Variable stockant la saisie de l'utilisateur
         String classeIpV4 = new String("0");
 
         System.out.println("Veuillez entrer une adresse IPv4");
@@ -26,6 +27,7 @@ public class Main {
             System.out.println("Cette adresse est un loopback");
         }
 
+        // Classe B
         if (saisie.classeB(classeIpV4) == true) {
             System.out.println("Cette adresse est de classe B");
             if (saisie.classeBPrivee(classeIpV4) == true) {
@@ -34,6 +36,8 @@ public class Main {
                 System.out.println("Cette adresse est publique");
             }
         }
+
+        // Classe C
         if (saisie.classeC(classeIpV4) == true) {
             System.out.println("Cette adresse est de classe C");
             if (saisie.classeCPrivee(classeIpV4) == true) {
